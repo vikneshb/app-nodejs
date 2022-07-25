@@ -3,7 +3,7 @@ version: "2.1"
 services:
   node:
     container_name: angularcontainer
-    build: ./.docker/node/
+    build: ./docker/node/
     ports:
       - 4200:4200
     volumes:
