@@ -1,0 +1,47 @@
+<app-header></app-header>
+ <div class="reg">
+    <div class="container content">
+    <div class="row">
+        <div class="col-md-4 offset-md-4  ">
+           <!-- 
+            <div class="sub" >Confirm your profile</div>-->
+            <div class="card c1"> 
+                <h1  class="heading">SignIn</h1>
+            <form [formGroup]="loginForm" class="text-center form"  (ngSubmit)="onsubmit()">
+                <div class="form-group gap">
+                    <label class="lbl">Contact Number</label>  
+                    <br>      
+                    <input type="number" formControlName="contactNo" id="uContactNo" class="form-control rname" name="contactNo" (keyup)="change()">
+                   <p class="text-danger"  *ngIf=" loginForm.controls.contactNo.invalid && loginForm.controls.contactNo.touched">Enter valid Number</p>
+                </div>
+                <div class="form-group gap1">
+                    <label class="lbl">Password</label>
+                    <br>        
+                    <input type="password" formControlName="password" id="uPass"class="form-control rname" name="password" (keyup)="change()"> 
+  
+                    <p class="text-danger"  *ngIf=" loginForm.controls.password.invalid && loginForm.controls.password.touched">Enter a valid password</p>
+                </div>
+
+                
+
+                   <div class="text-danger" *ngIf="val">{{errorMessage}}</div>
+                <div class="loginbtn">
+                    <button name="loginBtn" type="submit" [disabled]="loginForm.invalid" class="btn btn-success btns" (click)="onsubmit()">Login</button>   
+                </div>
+               
+            </form>
+            </div>
+         
+
+
+    <div class="p1"><p>New to Outpath? <a routerLink="/register" class="a">Create New Account</a></p></div>
+
+           
+            </div>
+
+    </div>
+
+</div>
+</div>
+<app-footer></app-footer>
+

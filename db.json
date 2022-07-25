@@ -1,0 +1,62 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "singupUsers": [
+    {
+      "fname": "sskc",
+      "lname": "niharika",
+      "emailid": "niharikasaitana@gmail.com",
+      "contactNo": 8639904287,
+      "password": "Niharika#312",
+      "id": 1
+    },
+    {
+      "fname": "ss",
+      "lname": "vv",
+      "contactNo": 8796451234,
+      "password": "vihannW#312",
+      "id": 2
+    },
+    {
+      "fname": "ss",
+      "lname": "ss",
+      "contactNo": 8796565425,
+      "password": "Niharika#312",
+      "id": 3
+    },
+    {
+      "fname": "vv",
+      "lname": "uu",
+      "contactNo": 7730098982,
+      "password": "Niharika#123",
+      "privacyAccptt": true,
+      "privacyAccpt": true,
+      "gender": "Female",
+      "id": 4
+    },
+    {
+      "fname": "",
+      "lname": "",
+      "contactNo": "",
+      "password": "",
+      "privacyAccpt": "",
+      "gender": "",
+      "id": 5
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

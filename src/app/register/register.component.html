@@ -1,0 +1,185 @@
+<app-header></app-header>
+<div class="reg">
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-6 offset-md-3  ">
+                <h2 class="heading">Sign Up</h2>
+                <div class="sub" >It's quick and easy</div>
+              <div class="card c1"> 
+
+                <form [formGroup]="registerForm" (ngSubmit)="register()" class="form text-center" style="margin-top: 6%;">
+
+                <!--    <div class="form-group gap">
+                        <label class="lbl">Designation</label>
+                        <input type="text"  formControlName="role" id="role" name="fname" class="form-control rname">
+                        <p *ngIf="registerForm.controls.role.touched && registerForm.controls.role.invalid" class="text-danger">Enter valid Designation</p>
+
+                    </div>  -->
+
+
+
+                    <div class="form-group gap">
+                        <label class="lbl">First Name</label>
+                        <input type="text"  formControlName="fname" id="rname" name="fname" class="form-control rname">
+                        <p *ngIf="registerForm.controls.fname.touched && registerForm.controls.fname.invalid" class="text-danger">Enter valid name</p>
+
+                    </div>
+
+                    <div class="form-group gap">
+                        <label class="lbl">Middle Name</label>  
+                        <input type="text"  formControlName="mname" id="mname" name="mname" class="form-control rname">
+                        
+                        <p *ngIf="registerForm.controls.mname.touched && registerForm.controls.mname.invalid" class="text-danger">Enter valid name</p>
+                    </div>
+
+                    <div class="form-group gap">
+                        <label class="lbl">Last Name</label>  
+                        <input type="text"  formControlName="lname" id="rname2" name="lname" class="form-control rname">
+                        
+                        <p *ngIf="registerForm.controls.lname.touched && registerForm.controls.lname.invalid" class="text-danger">Enter valid name</p>
+                    </div>
+
+                    <div class="form-group gap">
+                        <label class="lbl">Date of Birth</label>  
+                        <input type="date"  formControlName="dob" id="dob" name="dob" class="form-control rname">
+                        
+                        <p *ngIf="registerForm.controls.dob.touched && registerForm.controls.dob.invalid" class="text-danger">Enter valid date of birth</p>
+                    </div>
+
+                    
+
+                 <!--   <div class="form-group gap">
+                        <label class="lbl">Address</label>  
+                        <input type="text"  formControlName="address" id="address" name="address" class="form-control rname">
+                        
+                        <p *ngIf="registerForm.controls.address.touched && registerForm.controls.address.invalid" class="text-danger">Enter valid address</p>
+                    </div>
+
+                    <div class="form-group gap">
+                        <label class="lbl">Pincode</label>  
+                        <input type="text"  formControlName="pincode" id="pincode" name="pincode"  maxlength="6" class="form-control rname">
+                        
+                        <p *ngIf="registerForm.controls.pincode.touched && registerForm.controls.pincode.invalid" class="text-danger">Enter valid pincode</p>
+                    </div> -->
+
+<!--
+                    <div class="form-group">
+                        <label class="lbl" for="gender">Gender(optional)</label>
+                        <div>
+                          <input id="male" type="radio" value="male" name="gender" formControlName="gender">
+                          <label class="lbl_r" for="male">Male</label>
+
+                          <span>
+                            <input id="female" type="radio" value="female" name="gender" formControlName="gender">
+                            <label for="female">Female</label>
+                         </span>
+
+                         <span>
+                            <input id="transgender" type="radio" value="transgender" name="gender" formControlName="gender">
+                            <label for="transgender">transgender</label>
+                         </span>
+
+                        </div>
+              
+                       
+                       </div>
+                    -->
+                       <div class="form-group gap">
+                        <label class="lbl">Contact Number</label>        
+                        <input type="number"   formControlName="contactNo" id="uContactNo" class="form-control rname"> 
+                        <p *ngIf="registerForm.controls.contactNo.touched && registerForm.controls.contactNo.invalid" class="text-danger">Enter valid number</p>
+                    </div> 
+
+                  <!--  <div class="form-group gap">
+                        <label class="lbl">Email Id</label>
+                        <input type="email" class="form-control rname" formControlName="emailid" name="emailid" id="remailid">
+                        <p *ngIf="registerForm.controls.emailid.touched && registerForm.controls.emailid.invalid" class="text-danger">Enter valid Email Id</p>
+                       
+                    </div> -->
+
+                    <div class="form-group gap">
+                        <label class="lbl">Gender</label> </div>
+                        
+                        <div class="rname2">
+                            <label class="radio-inline lbl_r">
+                                <input type="radio" formControlName="gender" value="male" name="gender" (change)="changeGender($event)"><span class="sp">Male</span>
+
+                            </label>
+                            <label class="radio-inline lbl_r lbl_r2">
+                                <input type="radio"  formControlName="gender" value="Female" name="gender" (change)="changeGender($event)"><span class="sp">Female</span>
+
+                            </label>
+
+                            <label class="radio-inline lbl_r lbl_r2">
+                                <input type="radio" formControlName="gender"  value="Transgender" name="gender" (change)="changeGender($event)"><span class="sp">Transgender</span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="form-group gap">
+                            <label class="lbl">Email Id</label>
+                            <input type="email"  formControlName="emailid" id="emailid" name="emailid" class="form-control rname">
+                            <p *ngIf="registerForm.controls.emailid.touched && registerForm.controls.emailid.invalid" class="text-danger">Enter valid email id</p>
+    
+                        </div>
+
+                    <!--    <div class="form-group gap">
+                            <label class="lbl">User Id</label>
+                            <input type="text"  formControlName="userid" id="userid" name="userid" class="form-control rname">
+                            <p *ngIf="registerForm.controls.userid.touched && registerForm.controls.userid.invalid" class="text-danger">Enter valid email id</p>
+    
+                        </div> -->
+
+                        
+        
+                    <div class="form-group gap">
+                        <label class="lbl">Password</label>        
+                       <input type="password" class="form-control rname" formControlName="password" id="rpassword" name="password">
+                       <div class="text-danger" *ngIf="registerForm.controls.password.invalid && registerForm.controls.password.touched">
+                    
+                        <span *ngIf="registerForm.controls.password.errors?.required">Field Required</span>
+                        <span *ngIf="registerForm.controls.password.errors?.maxlength"> max length is 20</span>
+                        <span *ngIf="registerForm.controls.password.errors?.minlength"> min length is 7</span>
+                       
+                        
+    
+                          
+    
+                       </div> 
+                    </div>
+
+                   <div class="form-check check g1">
+			  <label class="form-check-label">
+                 <input id="privacyAccpt" formControlName="privacyAccpt" name="privacyAccpt" [checked]="k"  required class="form-check-input" type="checkbox" >
+                 <span>Agree to terms & Conditions</span>              
+              </label>
+			</div>
+
+<!-- 
+            <div class="form-check check">
+                <label class="form-check-label">
+                   <input id="privacyAccptt" formControlName="privacyAccptt" name="privacyAccptt"  [checked]="k"   class="form-check-input" type="checkbox" >
+                   <span>Allow Outpath to send messages on Whatsapp</span>              
+                </label>
+              </div>
+            -->
+                     <button type="submit" class="btn btn-success btn1 btn-sm" [disabled]="registerForm.invalid" style="margin-top: 5%">Sign up</button>  
+                    
+    
+
+                    </form>
+                </div>
+                    
+                  <div class="loginbtn">
+                        <button class="btn btn-success btn2" ><a routerLink="/login" class="a">Click here to login</a></button>
+                    </div> 
+                    <br> <br> <br> <br>
+                </div>
+                </div>
+                </div>
+
+
+</div>
+<app-footer></app-footer>

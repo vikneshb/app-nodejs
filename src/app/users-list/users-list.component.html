@@ -1,0 +1,266 @@
+<app-dashboard>
+    <div class="nav_dup">
+        <p class="sub_header">User Management</p>
+
+    </div>
+
+    <div class="topnav">
+        <a  href="/adduser" >Add User</a>
+        <a class="active" href="/users-list">Users</a>
+      
+      </div>
+<div class="col-md-12 offset-md" >
+    <select name="cat" id="cat" >
+        <option value="volvo">Select Category</option>
+        <option value="A1">A1</option>
+        <option value="A2">A2</option>
+        <option value="A3">A3</option>
+      </select>
+
+</div>
+
+    <table class="table">
+        <thead> 
+          <tr class="">
+            <th scope="col">Userid</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">LastName</th>
+            <th scope="col">Designation</th>
+            <th scope="col">Emailid</th>
+            <th scope="col">Edit</th>
+            
+          </tr>
+        </thead>
+       
+        
+          <tr *ngFor="let user of userList">
+             <th scope="row">{{ user.id }}</th>
+             <td >{{ user.fname }}</td>
+             <td >{{ user.lname }}</td>
+             <td>{{ user.Designation }}</td>
+             
+             <td>{{ user.email }}</td>
+           
+             <td (click)="open(content,user)"><mat-icon>edit</mat-icon></td>
+             <td>
+              </tr>
+          
+          
+          
+      
+      </table>
+
+
+      <br> 
+      <nav aria-label="Page navigation example" style="margin-left:25%;">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" style="background-color:#9945ff;" href="#" aria-label="Previous">
+              <span aria-hidden="true" style="color:white;"> &laquo;</span>
+            </a>
+          </li>&nbsp;&nbsp;
+          <li class="page-item"><a class="page-link" href="#" style="color:#9945ff;">1</a></li>
+          <li class="page-item"><a class="page-link" href="#"style="color:#9945ff;">2</a></li>
+          <li class="page-item"><a class="page-link" href="#"style="color:#9945ff;">3</a></li>&nbsp;&nbsp;
+          <li class="page-item">
+            <a class="page-link" style="background-color:#9945ff;" href="#" aria-label="Next">
+              <span aria-hidden="true" style="color:white;">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav><br>
+
+
+      <ng-template #content let-modal>
+        <div class="modal-content"> 
+        <div class="modal-header">
+          <h5 style="font-size: 19px;
+          text-transform: uppercase;
+          font-weight: bold;" class="modal-title" id="editProfileLabel">Edit Profile</h5>
+         <button style="width: 35px;
+         background-color: white;border: 2px solid black;" type="button" class="close" (click)="modal.dismiss()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+         </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <form [formGroup]="registerFormemp1" (ngSubmit)="onSubmit()" class="form text-center" >
+
+    
+              <div class="form-group gap">
+                 
+                  <label class="lbl">Designation</label>
+                  <span id="s1"> 
+                  <input type="text"  style="width: 647px;" formControlName="role" id="role" name="fname" class="form-control rname">
+              </span>
+              <p *ngIf="registerFormemp1.controls.role.touched && registerFormemp1.controls.role.invalid" class="text-danger">Enter valid Designation</p>
+              
+              </div> 
+
+
+
+
+              <div class="input-group gap">
+                  <label class="lbl">First Name</label>
+                  <span id="s1"> 
+                  <input type="text"  style="width: 157px;" formControlName="fname" id="rname" name="fname" class="form-control rname">
+              </span> 
+              <label class="lbl" style="margin-left: 8px;">Middle Name</label>  
+              <span id="s1" style="padding: 0px; margin-left: 7px;"> 
+              <input type="text"  style="width: 157px;"  formControlName="mname" id="mname" name="mname" class="form-control rname">
+          </span>
+
+          <label class="lbl"style=" margin-left: 8px;">Last Name</label>  
+              <span id="s1" style="padding: 0px;  margin-left: 5px;"> 
+              <input type="text"  style="width: 157px;"  formControlName="lname" id="lname" name="lname" class="form-control rname">
+          </span>
+          
+          <p class="text-danger"> 
+          <span id="e1" *ngIf="registerFormemp1.controls.fname.touched && registerFormemp1.controls.fname.invalid ">  Enter first valid name</span>
+          <span id="e2" *ngIf="registerFormemp1.controls.mname.touched && registerFormemp1.controls.mname.invalid ">  Enter middle valid name </span>
+          <span  id="e3" *ngIf="registerFormemp1.controls.lname.touched && registerFormemp1.controls.lname.invalid ">  Enter last valid name</span>
+        </p>
+              </div>
+<!--
+              <div class="form-group gap">
+                 
+                  <label class="lbl">Middle Name</label>  
+                  <span id="s1"> 
+                  <input type="text"  formControlName="mname" id="mname" name="mname" class="form-control rname">
+              </span>
+                  <p *ngIf="registerFormemp.controls.mname.touched && registerFormemp.controls.mname.invalid" class="text-danger">Enter valid name</p>
+              </div>
+
+              <div class="form-group gap">
+
+                  <label class="lbl">Last Name</label>  
+                  <span id="s1">
+                  <input type="text"  formControlName="lname" id="rname2" name="lname" class="form-control rname">
+              </span>
+                  <p *ngIf="registerFormemp.controls.lname.touched && registerFormemp.controls.lname.invalid" class="text-danger">Enter valid name</p>
+              </div> -->
+
+
+
+
+           <!--   <div class="input-group gap">
+                 
+                  <label class="lbl">Designation</label>
+                  <span id="s1"> 
+                  <input type="text"  style="width: 275px;" formControlName="role" id="role" name="fname" class="form-control rname">
+              </span>
+              <label class="lbl" style="margin-left: 14px;">Date of Birth</label>  
+                  <span id="s1" style="padding: 0px; margin-left: 13px;">
+                  <input type="date" style="width: 275px;"   formControlName="dob" id="dob" name="dob" class="form-control rname">
+              </span>
+              <p *ngIf="registerFormemp.controls.role.touched && registerFormemp.controls.role.invalid" class="text-danger">Enter valid Designation</p>
+              
+              </div>  -->
+
+              <div class="form-group gap">
+                  <label class="lbl">Date of Birth</label>  
+                  <span id="s1">
+                  <input type="date" style="width: 647px;"   formControlName="dob" id="dob" name="dob" class="form-control rname">
+              </span>
+                  <p *ngIf="registerFormemp1.controls.dob.touched && registerFormemp1.controls.dob.invalid" class="text-danger">Enter valid date of birth</p>
+              </div>
+
+              
+
+              <div class="form-group gap">
+                  <label class="lbl">Address</label> 
+                  <span id="s1"> 
+                  <input type="text"  style="width: 647px;"  formControlName="address" id="address" name="address" class="form-control rname">
+              </span>
+                  <p *ngIf="registerFormemp1.controls.address.touched && registerFormemp1.controls.address.invalid" class="text-danger">Enter valid address</p>
+              </div>
+
+              <div class="form-group gap">
+                  <label class="lbl">Pincode</label>  
+                  <span id="s1">
+                  <input type="text" style="width: 647px;"  formControlName="pincode" id="pincode" name="pincode"  maxlength="6" class="form-control rname">
+              </span>
+                  <p *ngIf="registerFormemp1.controls.pincode.touched && registerFormemp1.controls.pincode.invalid" class="text-danger">Enter valid pincode</p>
+              </div>
+
+
+    
+              <div class="form-group">
+                  <label class="lbl">Gender</label> </div>
+                
+                  <div class="rname2">
+                      <label class="radio-inline lbl_r1">
+                          <input type="radio" formControlName="gender" value="male" name="gender" (change)="changeGender($event)"><span class="sp">Male</span>
+
+                      </label>
+                      <label class="radio-inline lbl_r lbl_r2">
+                          <input type="radio"  formControlName="gender" value="Female" name="gender" (change)="changeGender($event)"><span class="sp">Female</span>
+
+                      </label>
+
+                      <label class="radio-inline lbl_r lbl_r2">
+                          <input type="radio" formControlName="gender"  value="Transgender" name="gender" (change)="changeGender($event)"><span class="sp">Transgender</span>
+
+                      </label>
+
+                  </div>
+              
+
+                  <div class="form-group gap2">
+                      <label class="lbl">Email Id</label>
+                      <span id="s1">
+                      <input type="email" style="width: 647px;"  formControlName="emailid" id="emailid" name="emailid" class="form-control rname">
+                  </span> 
+                      <p *ngIf="registerFormemp1.controls.emailid.touched && registerFormemp1.controls.emailid.invalid" class="text-danger">Enter valid email id</p>
+
+                  </div>
+
+                  <div class="form-group gap">
+                      <label class="lbl">User Id</label>
+                      <span id="s1">
+                      <input type="text" style="width: 647px;"  formControlName="userid" id="userid" name="userid" class="form-control rname">
+                  </span>
+                      <p *ngIf="registerFormemp1.controls.userid.touched && registerFormemp1.controls.userid.invalid" class="text-danger">Enter valid email id</p>
+
+                  </div>
+                  
+
+                  
+  
+              <div class="form-group gap">
+                  <label class="lbl">Password</label>
+                  <span id="s1">      
+                 <input type="password" style="width: 647px;"  class="form-control rname" formControlName="password" id="rpassword" name="password">
+              </span>
+                 <div class="text-danger" *ngIf="registerFormemp1.controls.password.invalid && registerFormemp1.controls.password.touched">
+              
+                  <span *ngIf="registerFormemp1.controls.password.errors?.required">Field Required</span>
+                  <span *ngIf="registerFormemp1.controls.password.errors?.maxlength"> max length is 20</span>
+                  <span *ngIf="registerFormemp1.controls.password.errors?.minlength"> min length is 7</span>
+                 
+                  
+
+                    
+
+                 </div> 
+              </div>
+
+   
+               <button type="submit" class="btn btn-primary btn1 btn-sm"  style="margin-top: 5%">update</button>  
+               
+               <button type="button" class="btn btn-secondary btn2" (click)="cancel()" style="margin-top: 5%">Cancel</button>   
+
+
+              </form>
+          </form>
+        </div>
+        
+      </div>
+      </ng-template>
+      
+
+      
+
+
+
+</app-dashboard>

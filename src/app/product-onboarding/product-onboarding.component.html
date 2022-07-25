@@ -1,0 +1,134 @@
+<app-dashboard>
+    <div class="nav_dup">
+        <p class="sub_header">Product Onboarding</p>
+
+    </div>
+    <div class="reg">
+        <div class="container content">
+            <div class="row">
+                <div class="col-md-12 offset-md  ">
+                   
+                    <div class="card"> 
+                        <h2 class="heading">Product Onboarding</h2>
+                    <form [formGroup]="productForm" (ngSubmit)="product()">
+                        
+                        <!-- uptime down time-->
+                        <div class="input-group gap">
+                           
+                            <label class="lbl">Up Time</label>
+                            <span id="s1"> 
+                            <input type="datetime-local"   formControlName="uptime" id="uptime" name="uptime" class="form-control rname">
+                        </span>
+
+                        <label class="lbl" style="margin-left: 45px;">Down Time</label>
+                            <span id="s1" style="padding: 0px;
+                            margin-left: 29px;"> 
+                            <input type="datetime-local"   formControlName="downtime" id="downtime" name="downtime" class="form-control rname">
+                        </span>
+
+                        <div class="text-danger" style="margin-left: 38%;">
+
+                            <span *ngIf="productForm.controls.uptime.invalid && productForm.controls.uptime.touched || (productForm.controls.downtime.invalid && productForm.controls.downtime.touched)">enter correct details</span>
+                            
+                        </div>
+                       
+                        
+                        </div> 
+                        <!-- list of services -->
+
+                        <div class="form-group gap">
+                           
+                            <label class="lbl"> services </label>
+                            <span id="s1"> 
+
+                                <select name="cars" id="cars" class="form-control" style="width: 560px;">
+                                    <option value="A1">A1</option>
+                                    <option value="A2">A2</option>
+                                    <option value="A3">A3</option>
+                                    <option value="A4">A4</option>
+                                  </select>
+                                
+                        </span>
+                      
+                        
+                        </div> 
+
+                        <!-- Service type-->
+                        <div class="form-group gap">
+                           
+                            <label class="lbl">Service Type</label>
+                            <span id="s1"> 
+                            <input type="text"  style="width: 560px;" formControlName="servicetype" id="servicetype" name="servicetype" class="form-control rname">
+                        </span>
+                        <p *ngIf="productForm.controls.servicetype.touched && productForm.controls.servicetype.invalid" class="text-danger">Enter valid Designation</p>
+                        
+                        </div> 
+
+                        <!-- service start and end date-->
+                        <div class="input-group gap">
+                           
+                            <label class="lbl">Start Date</label>
+                            <span id="s1"> 
+                            <input type="date"  style="width:196px"   formControlName="strtdate" id="strtdate" name="strtdate" class="form-control rname">
+                        </span>
+
+                        <label class="lbl" style="margin-left: 65px;">End Date</label>
+                            <span id="s1" style="padding: 0px;
+                            margin-left: 12px;"> 
+                            <input type="date"  style="width:196px"  formControlName="enddate" id="downdate" name="enddate" class="form-control rname">
+                        </span>
+
+                        <div class="text-danger" style="margin-left: 38%;">
+
+                            <span *ngIf="productForm.controls.strtdate.invalid && productForm.controls.strtdate.touched">enter correct Start date</span>
+                            
+                            </div>
+                        </div>
+
+                        <!-- Journey type & city-->
+
+                     
+
+                    <div class="input-group gap">
+                           
+                        <label class="lbl">Journey type</label>
+                        <span id="s1"> 
+                            <select name="jrnytype"  formControlName="jrnytype"id="jrnytype" class="form-control" style="width:196px;">
+                                <option value="single">single</option>
+                                <option value="return">return</option>
+                               
+                              </select>
+                    </span>
+
+                    <label class="lbl" style="margin-left: 45px;">Available city</label>
+                        <span id="s1" style="padding: 0px;
+                        margin-left: 35px;"> 
+                        <select name="city"  formControlName="city" id="city" class="form-control" style="width: 196px;">
+                            <option value="single" >single</option>
+                            <option value="return">return</option>
+                           
+                          </select>
+                    </span>
+
+                    <div class="text-danger" style="margin-left: 38%;">
+
+                        <span *ngIf="productForm.controls.uptime.invalid && productForm.controls.uptime.touched || (productForm.controls.downtime.invalid && productForm.controls.downtime.touched)">enter correct details</span>
+                        
+                    </div>
+                   
+                    
+                    </div> 
+  
+<br> <br>
+<button type="submit" class="btn btns" [disabled]="productForm.invalid"> SUBMIT</button>
+
+                        </form>
+                    </div>
+
+                </div>
+                </div>
+                </div>
+                </div>
+
+</app-dashboard>
+

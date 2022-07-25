@@ -1,0 +1,115 @@
+<!--
+<mat-toolbar class="mat-elevation-z8">
+  <button
+    mat-icon-button
+    *ngIf="sidenav.mode === 'over'"
+    (click)="sidenav.toggle()"
+  >
+    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+  </button>
+  Responsive side navigation
+
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar> -->
+
+
+
+
+
+
+
+
+
+
+  
+  <mat-sidenav-container class="sidenav">
+   
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+
+      <img
+        class="img_logo"
+        src="assets/logo_footer.png"
+      />
+
+      <img
+        class="avatar mat-elevation-z8"
+        src="assets/User.png"
+      />
+  
+      <h4 class="name">John Smith</h4>
+      <p class="designation">Software Engineer</p>
+  
+      <mat-divider></mat-divider>
+  
+      <button mat-button class="menu-button" routerLink="/product-onboarding">
+        
+        <span>Product Onboarding</span>
+      </button>
+      <button mat-button class="menu-button" routerLink="/page1">
+       
+        <span>Service Provider</span>
+      </button>
+
+      <button mat-button class="menu-button" routerLink="/page1">
+       
+        <span>Fare Metrics</span>
+      </button>
+
+      <button mat-button class="menu-button" routerLink="/users-list">
+       
+        <span>User Management</span>
+      </button>
+      
+      
+
+      
+      
+
+      
+  <!--
+      <mat-divider></mat-divider>
+     
+      <button mat-button class="menu-button" routerLink="/page1">
+        <a routerLink="/login" class="a">
+       
+        <span style="margin-left: 30px;">SIGN OUT</span></a>
+      </button> -->
+    </mat-sidenav>
+    <mat-sidenav-content>
+      
+      <div class="content mat-elevation-z8">
+        <p>
+          <mat-toolbar>
+           
+          <button
+            mat-icon-button
+            *ngIf="sidenav.mode === 'over'"
+            (click)="sidenav.toggle()"
+          >
+            <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+            <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+          </button>
+         
+          <span class="example-spacer"></span>
+          <button mat-icon-button class="example-icon profile-icon" aria-label="Example icon-button with profile icon">
+            <mat-icon>account_circle</mat-icon>
+          </button>
+          <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with settings icon">
+            <mat-icon>settings</mat-icon>
+          </button>
+          <button mat-icon-button class="example-icon" aria-label="Example icon-button with logout icon">
+           <mat-icon>logout</mat-icon>
+         </button>
+        </mat-toolbar>
+        </p>
+        <ng-content ></ng-content>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
