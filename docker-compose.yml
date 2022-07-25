@@ -1,8 +1,8 @@
-version: "2.1"
+version: "3"
 
 services:
   node:
-    container_name: angularcontainer
+    container_name: angularcontainer1
     build: ./docker/
     ports:
       - 4200:4200
