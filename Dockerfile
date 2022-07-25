@@ -1,21 +1,13 @@
-FROM node:16
+FROM node:latest
 
-# Create app directory
-WORKDIR /usr/src/app
-
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
-
-RUN npm install -g @angular/cli
-
-# If you are building your code for production
-# RUN npm ci --only=production
-
-# Bundle app source
-COPY . .
+RUN apt-get update
 
 EXPOSE 4200
 
-CMD [ "ng", "serve" ]
+USER node
+
+RUN mkdir /home/node/.npm-global
+ENV PATH=/home/node/.npm-global/bin:$PATH
+ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
+
+RUN npm install -g @angular/cli
